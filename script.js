@@ -31,7 +31,32 @@ let changeText = ()=>{
         },340 + i*80);
         });
         currentWordIndex = currentWordIndex === maxWordIndex ? 0 : currentWordIndex + 1;
-    };
+};
 
-    changeText();
-    setInterval(changeText,3000)
+changeText();
+setInterval(changeText,3000)
+
+
+    //////////////////////////       circle skills       /////////////////////////////
+    const circles = document.querySelectorAll('.circle');
+    circles.forEach(elem=>{
+        var dots = elem.getAttribute("data-dots");
+        var marked = elem.getAttribute("data-percent");
+        var percent = Math.floor(dots*marked/100);
+        var points = "";
+        var rotate = 360 / dots;
+
+        for(let i = 0; i < dots ; i++){
+            points +=`<div class="point" style="--i:${i}; --rot:${rotate}deg"></div>`;
+        }
+        elem.innerHTML = points;
+
+        const pointsMarked = elem.querySelectorAll('.point');
+        for(let i = 0; i<percent; i++){
+            pointsMarked[i].classList.add('marked')
+        }
+    })
+
+
+/////////////   mix it up portfolio section    ///////////
+var mixer = mixitup('.portfolio-gallery');
