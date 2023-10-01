@@ -13,19 +13,19 @@
         <header>
             <div class = "logo"><span>L</span>igalah.</div>
             <ul class = "navlist">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#skills">Skills</a></li>
-              <li><a href="#portfolio">Portfolio</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="#home" style="--i:1;">Home</a></li>
+              <li><a href="#about" style="--i:2;">About</a></li>
+              <li><a href="#services" style="--i:3;">Services</a></li>
+              <li><a href="#skills" style="--i:4;">Skills</a></li>
+              <li><a href="#portfolio" style="--i:5;">Portfolio</a></li>
+              <li><a href="#contact" style="--i:6;">Contact</a></li>
             </ul>
             <div id="menu-icon" class="bx bx-menu"></div>
         </header>
 
         <!--home section-->
         <section id="home" class="home">
-            <div class="home-content">
+            <div class="home-content scroll-scale">
                 <h1>Hi! I'm <strong>Ligalah Hezron</strong></h1>
                 <div class="change-text">
                     <h3>And I'm a</h3>
@@ -64,7 +64,7 @@
                 </div>
 
             </div>
-            <div class="home-image">
+            <div class="home-image scroll-scale">
                 <div class="img-box">
                    <img src="me.png" alt=""></img> 
                 </div>
@@ -132,7 +132,7 @@
         <!-------------------------       about section      ------------------>
 
         <section id="about" class="about">
-            <div class="img-about">
+            <div class="img-about scroll-scale">
                 <img src="krilli1.svg" alt="">
                 <div class="info-about1">
                     <span>0.8 +</span>
@@ -147,7 +147,7 @@
                     <P>Happy Clients</P>
                 </div>
             </div>
-            <div class="about-content">
+            <div class="about-content scroll-scale">
                 <span>A brief introduction</span>
                 <h2>About Me</h2>
                 <h3>A story of good</h3>
@@ -162,12 +162,12 @@
         
         <!-------------------------       services section      ------------------>
         <section id="services" class="services">
-            <div class="main-text">
+            <div class="main-text scroll-scale">
                 <span>what i will do for you</span>
                 <h2>My Services</h2>
             </div>
 
-            <div class="section-services">
+            <div class="section-services scroll-bottom">
                 <div class="service-box">
                     <i class='bx bxs-layer service-icon'></i>
                     <h3>Graphic Designer</h3>
@@ -203,14 +203,14 @@
         <!-------------------------       skills section      ------------------>
 
         <section id="skills" class="skills">
-            <div class="main-text">
+            <div class="main-text scroll-scale">
                 <span>
                     technical and professional
                 </span>
                 <h2>My Skills</h2>
             </div>
             <div class="skill-main">
-                <div class="skill-left">
+                <div class="skill-left scroll-scale">
                     <h3>Technical Skills</h3>
                     <div class="skill-bar">
                         <div class="info">
@@ -258,10 +258,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="skill-right">
+                <div class="skill-right scroll-scale">
                     <h3>Professional Skills</h3>
                     <div class="professional">
- 
                         <div class="box">
                             <div class="circle" data-dots="80" data-percent="90"></div>
                             <div class="text">
@@ -277,7 +276,7 @@
                                 <small>Project Management</small>
                             </div>
                         </div>
-
+            
                         <div class="box">
                             <div class="circle" data-dots="80" data-percent="98"></div>
                             <div class="text">
@@ -285,7 +284,7 @@
                                 <small>Creativity</small>
                             </div>
                         </div>
-
+            
                         <div class="box">
                             <div class="circle" data-dots="80" data-percent="96"></div>
                             <div class="text">
@@ -293,7 +292,6 @@
                                 <small>Communication</small>
                             </div>
                         </div>
-                       
                     </div>
                 </div>
             </div>
@@ -303,19 +301,19 @@
         <!-------------------------       portfolio section      ------------------>
 
         <section id="portfolio" class="portfolio">
-            <div class="main-text">
+            <div class="main-text scroll-scale">
                 <span>what i will do for you</span>
                 <h2>Latest Project</h2>
             </div>
 
-            <div class="fillter-buttons">
-                <button class="btn" data-filter="all">All</button>
-                <button class="btn" data-filter=".product">Product</button>
-                <button class="btn" data-filter=".inter">Interacting</button>
-                <button class="btn" data-filter=".web">Web App</button>
+            <div class="fillter-buttons scroll-scale">
+                <button class="button" data-filter="all">All</button>
+                <button class="button" data-filter=".product">Product</button>
+                <button class="button" data-filter=".inter">Interacting</button>
+                <button class="button" data-filter=".web">Web App</button>
             </div>
 
-            <div class="portfolio-gallery">
+            <div class="portfolio-gallery scroll-bottom">
                 <div class="port-box mix product">
                     <div class="port-image">
                         <img src="KRILLITANE (1).png" alt="">
@@ -365,11 +363,11 @@
         <!--------------------       Contact Section        ----------------------------------->
 
         <section id="contact" class="contact">
-            <div class="main-text">
+            <div class="main-text scroll-scale">
                 <span>ask me questions</span>
                 <h2>Contact Me</h2>
             </div>
-            <form action="#">
+            <form action="#" class="scroll-bottom">
                 <input type="text" placeholder="Your Name">
                 <input type="text" placeholder="Your Email">
                 <input type="text" placeholder="Your Address">
@@ -382,7 +380,7 @@
         </section>
         <!--------------------       Footer Section        ----------------------------------->
         <footer>
-            <p>Copyright &copy; 2023 by Ligalah Hezron || All Rights Reserverd.</p>
+            <p class="scroll-scale">Copyright &copy; 2023 by Ligalah Hezron || All Rights Reserverd.</p>
             <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
         </footer>
         <script src="mixitup.min.js"></script>

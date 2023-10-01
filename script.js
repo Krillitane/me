@@ -37,25 +37,33 @@ changeText();
 setInterval(changeText,3000)
 
 
-    //////////////////////////       circle skills       /////////////////////////////
+//////////////////////////       circle skills       /////////////////////////////
+document.addEventListener('DOMContentLoaded', function() {
     const circles = document.querySelectorAll('.circle');
-    circles.forEach(elem=>{
-        var dots = elem.getAttribute("data-dots");
-        var marked = elem.getAttribute("data-percent");
-        var percent = Math.floor(dots*marked/100);
-        var points = "";
-        var rotate = 360 / dots;
+    
+    circles.forEach(elem => {
+        const dots = parseInt(elem.getAttribute("data-dots"));
+        const marked = parseInt(elem.getAttribute("data-percent"));
+        const percent = Math.floor((dots * marked) / 100);
+        const points = [];
+        const rotate = 360 / dots;
 
-        for(let i = 0; i < dots ; i++){
-            points +=`<div class="point" style="--i:${i}; --rot:${rotate}deg"></div>`;
+        for (let i = 0; i < dots; i++) {
+            const point = document.createElement('div');
+            point.classList.add('point');
+            point.style.transform = `rotate(${i * rotate}deg)`;
+            points.push(point);
         }
-        elem.innerHTML = points;
+
+        elem.append(...points);
 
         const pointsMarked = elem.querySelectorAll('.point');
-        for(let i = 0; i<percent; i++){
-            pointsMarked[i].classList.add('marked')
+        for (let i = 0; i < percent; i++) {
+            pointsMarked[i].classList.add('marked');
         }
-    })
+    });
+});
+
 
 
 /////////////   mix it up portfolio section    ///////////
@@ -102,3 +110,25 @@ window.onscroll = ()=>{
     menuIcon.classList.remove("bx-x");
     navlist.classList.remove("open");
 }
+
+
+//////////////   Paralax   /////////////////////////
+
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show-items");
+        }else{
+            entry.target.classList.remove("show-items");
+        }
+    });
+});
+
+const scrollScale = document.querySelectorAll(".scroll-scale");
+scrollScale.forEach((el)=>observer.observe(el));
+
+const scrollBottom = document.querySelectorAll(".scroll-bottom");
+scrollBottom.forEach((el)=>observer.observe(el));
+
+const scrollTop = document.querySelectorAll(".scroll-top");
+scrollTop.forEach((el)=>observer.observe(el));
