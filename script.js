@@ -38,41 +38,26 @@ setInterval(changeText,3000)
 
 
 //////////////////////////       circle skills       /////////////////////////////
-document.addEventListener('DOMContentLoaded', function() {
-    const circles = document.querySelectorAll('.circle');
-    
-    circles.forEach(elem => {
-        const dots = parseInt(elem.getAttribute("data-dots"));
-        const marked = parseInt(elem.getAttribute("data-percent"));
-        const percent = Math.floor((dots * marked) / 100);
-        const points = [];
-        const rotate = 360 / dots;
+const circles = document.querySelectorAll('.circle');
+circles.forEach(elem=>{
+    var dots = elem.getAttribute("data-dots");
+    var marked = elem.getAttribute("data-percent");
+    var percent = Math.floor(dots*marked/100);
+    var points = "";
+    var rotate = 360 / dots;
 
-        for (let i = 0; i < dots; i++) {
-            const point = document.createElement('div');
-            point.classList.add('point');
-            point.style.transform = `rotate(${i * rotate}deg)`;
-            points.push(point);
-        }
+    for(let i = 0 ; i< dots ; i++){
+        points += `<div class="points" style="--i:${i}; --rot:${rotate}deg"></div>`;
+    }
+    elem.innerHTML = points;
 
-        elem.append(...points);
-
-        const pointsMarked = elem.querySelectorAll('.point');
-        for (let i = 0; i < percent; i++) {
-            pointsMarked[i].classList.add('marked');
-        }
-    });
-});
-
-
-
+    const pointsMarked = elem.querySelectorAll('.points');
+    for(let i = 0; i<percent ; i++){
+        pointsMarked[i].classList.add('marked')
+    }
+})
 /////////////   mix it up portfolio section    ///////////
 var mixer = mixitup('.portfolio-gallery');
-
-
-
-
-
 
 //////////    active menu    ////////////////////////////////
 let menuLi = document.querySelectorAll('header ul li a');
@@ -132,3 +117,30 @@ scrollBottom.forEach((el)=>observer.observe(el));
 
 const scrollTop = document.querySelectorAll(".scroll-top");
 scrollTop.forEach((el)=>observer.observe(el));
+
+
+
+
+//                          services section                                       //
+////////read more/////
+document.addEventListener('DOMContentLoaded', function() {
+    // Get references to the button and hidden content
+    const readMoreButton = document.querySelector('#bttn');
+    const hiddenContent = document.querySelector('.hidden-content');
+
+    // Add a click event listener to the button
+    readMoreButton.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior (e.g., navigating to a new page)
+
+        // Toggle the visibility of the hidden content
+        if (hiddenContent.style.display === 'none' || hiddenContent.style.display === '') {
+            hiddenContent.style.display = 'block';
+            readMoreButton.textContent = 'Read Less'; // Optionally, change the button text
+        } else {
+            hiddenContent.style.display = 'none';
+            readMoreButton.textContent = 'Read More'; // Optionally, change the button text
+        }
+    });
+});
+
+

@@ -12,7 +12,7 @@
     --text-color: #000000;
     --hover-color: #007bff;
     --big-color: #ffffff;
-    --second-bg-color: #333333;
+    --second-bg-color: #4d4d4d;
     --big-font: 2.5rem;
     --normal-font: 2rem;
     --neon-box-shadow: 0 0 0.5rem #007bff;
@@ -457,12 +457,17 @@ section{
     line-height: 1.6;
 }
 
+.hidden-content {
+    display: none;
+}
+
+
 
 /*================              skills section               ======================*/
-.skills{
+.skills {
     background: var(--second-bg-color);
 }
-.skill-main {
+.skill-main{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -471,7 +476,7 @@ section{
 }
 
 .skill-bar{
-    margin-bottom: 2.3rem;
+    margin-bottom: 2.5rem;
 }
 .skill-main h3{
     margin-bottom: 2rem;
@@ -489,7 +494,7 @@ section{
 .skill-left .skill-bar .bar{
     width: 100%;
     height: 10px;
-    background-color: var(--bg-color);
+    background-color: var(--text-color);
     border-radius: 25px;
     margin-top: 10px;
     position: relative;
@@ -517,74 +522,78 @@ section{
 
 .skill-bar .bar .css{
     width: 86%;
-    animation: css 3s;
+    animation: css 4s;
 }
 
 .skill-bar .bar .csharp{
     width: 70%;
-    animation: csharp 4s;
+    animation: csharp 5s;
 }
 
 .skill-bar .bar .figma{
     width: 72%;
-    animation: figma 5s;
+    animation: figma 6s;
 }
 
 /* skill-right */
-.professional {
+.professional{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2,1fr);
 }
 
-.box {
+
+
+.box{
     position: relative;
     margin: 10px 0;
     flex: 1 1 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center;
 }
 
-.box .text {
+.box .text{
     text-align: center;
-    color: #fff;
+    color: var(--text-color);
     font-size: 1rem;
 }
 
-.box .text big {
-    font-weight: 400;
+.box .text big{
+    font: 400;
     letter-spacing: 1px;
     position: absolute;
     top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50% , -50%);
 }
-
-.box .text small {
+.box .text small{
     display: block;
     font-weight: 600;
 }
-
-.circle {
-    width: 100px;
-    height: 100px;
-    display: flex;
+.circle{
+    width: 100%;
+    height: 120px;
     justify-content: center;
     align-items: center;
-    background-color: #3498db; /* Add your background color */
-    border-radius: 50%;
-    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
-.point {
+.circle .points{
     width: 2px;
     height: 10px;
-    background-color: #fff; /* Add your point color */
+    background-color: var(--second-bg-color);
     position: absolute;
     border-radius: 3px;
+    transform: rotate(calc(var(--i)*var(--rot))) translateY(-45px);
+    
 }
-
-.point.marked {
-    animation: glow 0.5s linear forwards;
+.points.marked{
+    animation: glow 0.04s linear forwards;
+    animation-delay: calc(var(--i)*0.05s);
 }
-
 
 /*================              portfolio section               ======================*/
 
@@ -692,7 +701,7 @@ section{
 /*=========================           Contact section          ============================*/
 
 .contact{
-    background: var(--second-bg-color);
+    background:#666666;
     width: 100%;
 }
 
@@ -845,12 +854,12 @@ footer a i {
 
 @keyframes glow{
     0%{
-        background: var(--bg-color);
+        background: var(--text-color);
         box-shadow: none;
     }
     100%{
-        background: var(--bg-color);
-        box-shadow: var(--neon-box-shadow);
+       background: var(--hover-color);
+       box-shadow: var(--neon-box-shadow);
     }
 }
 
