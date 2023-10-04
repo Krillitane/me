@@ -53,16 +53,16 @@ header{
     top: 0;
     left: 0;
     z-index: 1000;
-    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid var(--second-bg-color);
     display:flex;
     align-items:center;
     justify-content:space-between;
     width:100%;
     padding:20px 10%;
+    background: var(--big-color);
+    transition: background 0.3s ease;
 }
-
 header.sticky{
-    background: var(--bg-color);
     border-bottom: 1px solid var(--second-bg-color);
     padding: 12px 10%;
 }
@@ -186,7 +186,7 @@ section{
 }
 .info-box span{
     font-size:.9rem;
-    color: #009688;
+    color: #333333;
 }
 
 .btn-box{
@@ -241,6 +241,19 @@ section{
     background: var(--hover-color);
 }
 
+.hidden-content{
+    margin: 20px;
+    border-radius: 20px;
+    padding: 10px;
+}
+.icon-link{
+    font-size: 24px;
+    color: var(--hover-color);  
+}
+.icon-size{
+    width: 20px;
+    height: 20px;
+}
 .social-icons{
     margin-top: 8rem;
     display: flex;
@@ -264,6 +277,7 @@ section{
     position: relative;
     z-index: 1;
     overflow: hidden;
+    margin-right: 10px;
 }
 .social-icons a i{
     font-size: 1.5rem;
@@ -281,6 +295,7 @@ section{
     background: var(--hover-color);
     transition: .6s;
     z-index: -1;
+
 }
 .social-icons a:hover::before{
     width: 100%;
@@ -367,6 +382,9 @@ section{
     top: 70%;
 }
 
+.abouthidden-content{
+    display: none;
+}
 .img-about span{
     color: var(--hover-color);
     font-size: 1rem;
@@ -445,11 +463,9 @@ section{
     line-height: 1.6;
 }
 
-.hidden-content {
+.serviceshidden-content{
     display: none;
 }
-
-
 
 /*================              skills section               ======================*/
 .skills {
@@ -914,7 +930,7 @@ footer a i {
         right: 0;
         left: 0;
         flex-direction: column;
-        background: var(--bg-color);
+        background: var(--big-color);
         text-align: left;
         padding: 0 5%;
         transition: all .45s ease;
@@ -924,6 +940,9 @@ footer a i {
         padding-bottom: 1rem;
         font-size: 1rem;
     }
+    .navlist a.active{
+        color: var(--second-bg-color);
+    }
     .navlist.open{
         top: 100%;
     }
@@ -932,11 +951,6 @@ footer a i {
     }
     .home-image{
         margin-bottom: 5rem;
-    }
-    .liquid-shape{
-        width: 80%;
-        left: 10%;
-        top: 13%;
     }
     .about{
         flex-direction: column-reverse;
@@ -966,7 +980,7 @@ footer a i {
         width: 300px;
     }
     .info-about1,.info-about2,.info-about3{
-        display: none;
+        z-index: -1;
     }
     .img-about p{
         font-size: 1rem;

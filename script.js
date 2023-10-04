@@ -1,3 +1,27 @@
+//// dynamic background color for my header section ///
+document.addEventListener("DOMContentLoaded", function () {
+    const header = document.querySelector("header");
+    const sections = document.querySelectorAll("section");
+
+    // Function to update header background color based on the bottom of the section
+    function updateHeaderBackground() {
+        sections.forEach((section) => {
+            const rect = section.getBoundingClientRect();
+            if (rect.bottom <= window.innerHeight) {
+                const backgroundColor = getComputedStyle(section).backgroundColor;
+                header.style.background = backgroundColor;
+            }
+        });
+    }
+
+    // Initial call to set the header background color
+    updateHeaderBackground();
+
+    // Update header background on scroll
+    window.addEventListener("scroll", updateHeaderBackground);
+});
+
+////////////////////////////   words    //////////////////////////
 let words = document.querySelectorAll(".word");
 words.forEach((word)=>{
     let letters = word.textContent.split(""); 
@@ -36,7 +60,26 @@ let changeText = ()=>{
 changeText();
 setInterval(changeText,3000)
 
+//////////////////////////       show cv       /////////////////////////////
+document.addEventListener("DOMContentLoaded", function () {
+    const showButton = document.getElementById("showButton");
+    const hiddenContent = document.getElementById("hiddenContent");
 
+    // Initially, hide the content
+    hiddenContent.style.display = "none";
+
+    // Add a click event listener to the button
+    showButton.addEventListener("click", function () {
+        // Toggle the visibility of the hidden content
+        if (hiddenContent.style.display === "none") {
+            hiddenContent.style.display = "block";
+            showButton.textContent = "Conceal";
+        } else {
+            hiddenContent.style.display = "none";
+            showButton.textContent = "Show CV"
+        }
+    });
+});
 //////////////////////////       circle skills       /////////////////////////////
 const circles = document.querySelectorAll('.circle');
 circles.forEach(elem=>{
@@ -119,26 +162,44 @@ const scrollTop = document.querySelectorAll(".scroll-top");
 scrollTop.forEach((el)=>observer.observe(el));
 
 
-
-
-//                          services section                                       //
 ////////read more/////
 document.addEventListener('DOMContentLoaded', function() {
     // Get references to the button and hidden content
     const readMoreButton = document.querySelector('#bttn');
-    const hiddenContent = document.querySelector('.hidden-content');
+    const abouthiddenContent = document.querySelector('.abouthidden-content');
 
     // Add a click event listener to the button
     readMoreButton.addEventListener('click', function(event) {
         event.preventDefault(); // Prevent the default link behavior (e.g., navigating to a new page)
 
         // Toggle the visibility of the hidden content
-        if (hiddenContent.style.display === 'none' || hiddenContent.style.display === '') {
-            hiddenContent.style.display = 'block';
+        if (abouthiddenContent.style.display === 'none' || abouthiddenContent.style.display === '') {
+            abouthiddenContent.style.display = 'block';
             readMoreButton.textContent = 'Read Less'; // Optionally, change the button text
         } else {
-            hiddenContent.style.display = 'none';
+            abouthiddenContent.style.display = 'none';
             readMoreButton.textContent = 'Read More'; // Optionally, change the button text
+        }
+    });
+});
+
+//                          services section                                       //
+document.addEventListener('DOMContentLoaded', function() {
+    // Get references to the button and hidden content
+    const readMoreServices = document.querySelector('#btnService');
+    const serviceshiddenContent = document.querySelector('.serviceshidden-content');
+
+    // Add a click event listener to the button
+    readMoreServices.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior (e.g., navigating to a new page)
+
+        // Toggle the visibility of the hidden content
+        if (serviceshiddenContent.style.display === 'none' || serviceshiddenContent.style.display === '') {
+            serviceshiddenContent.style.display = 'block';
+            readMoreServices.textContent = 'Read Less'; // Optionally, change the button text
+        } else {
+            serviceshiddenContent.style.display = 'none';
+            readMoreServices.textContent = 'Read More'; // Optionally, change the button text
         }
     });
 });
