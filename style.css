@@ -913,6 +913,12 @@ footer a i {
     .social-icons{
         margin-top: 2rem;
     }
+    .serviceshidden-content1{
+        display: none;
+    }
+    .serviceshidden-content2{
+        display: none;
+    }
 }
 
 @media(max-width:768px) {
@@ -966,6 +972,12 @@ footer a i {
     footer p{
         font-size: .8rem;
     }
+    .serviceshidden-content1{
+        display: none;
+    }
+    .serviceshidden-content2{
+        display: none;
+    }
 }
 
 @media(max-width:420px){
@@ -986,5 +998,11 @@ footer a i {
     }
     .img-about p{
         font-size: 1rem;
+    }
+    .serviceshidden-content1{
+        display: none;
+    }
+    .serviceshidden-content2{
+        display: none;
     }
 }
