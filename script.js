@@ -186,8 +186,28 @@ document.addEventListener('DOMContentLoaded', function() {
 //                          services section                                       //
 document.addEventListener('DOMContentLoaded', function() {
     // Get references to the button and hidden content
-    const readMoreServices = document.querySelector('#btnService');
-    const serviceshiddenContent = document.querySelector('.serviceshidden-content');
+    const readMoreServices = document.querySelector('#btnService1');
+    const serviceshiddenContent = document.querySelector('.serviceshidden-content1');
+
+    // Add a click event listener to the button
+    readMoreServices.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior (e.g., navigating to a new page)
+
+        // Toggle the visibility of the hidden content
+        if (serviceshiddenContent.style.display === 'none' || serviceshiddenContent.style.display === '') {
+            serviceshiddenContent.style.display = 'block';
+            readMoreServices.textContent = 'Read Less'; // Optionally, change the button text
+        } else {
+            serviceshiddenContent.style.display = 'none';
+            readMoreServices.textContent = 'Read More'; // Optionally, change the button text
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get references to the button and hidden content
+    const readMoreServices = document.querySelector('#btnService2');
+    const serviceshiddenContent = document.querySelector('.serviceshidden-content2');
 
     // Add a click event listener to the button
     readMoreServices.addEventListener('click', function(event) {

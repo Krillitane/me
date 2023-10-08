@@ -463,10 +463,12 @@ section{
     line-height: 1.6;
 }
 
-.serviceshidden-content{
+.serviceshidden-content1 {
     display: none;
 }
-
+.serviceshidden-content2{
+    display: none;
+}
 /*================              skills section               ======================*/
 .skills {
     background: var(--second-bg-color);
