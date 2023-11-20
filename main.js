@@ -1,5 +1,3 @@
-const { default: Swiper } = require("swiper")
-
 /* Show menu */
 const navMenu = document.getElementById('navmenu'),
       navToggle = document.getElementById('navtoggle'),
@@ -30,41 +28,24 @@ const linkAction = () =>{
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
-/* Swiper Projects 
-let swiperProjects = new Swiper(".projects-container", {
-    loop: true,
-    spaceBetween: 24,
+document.addEventListener("DOMContentLoaded", function () {
+    /*== Swiper Projects== */
+    let swiperProjects = new Swiper(".projects-container", {
+        loop: true,
+        spaceBetween: 24,
 
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-        el: ".swiper-pagination",
-    },
-    mousewheel: true,
-    keyboard: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+        breakpoints: {
+            1200: {
+                slidesPerView: 2, // Fix the typo here
+                spaceBetween: -56,
+            },
+        },
+    });
 });
-*/
-
-const swiper = new Swiper('.projects-container', {
-    // Optional parameters
-    direction: 'vertical',
-    loop: true,
-  
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
-  
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  });
