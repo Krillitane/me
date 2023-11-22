@@ -557,9 +557,35 @@
                                     <span class="testimonial-subtitle">Client</span>
                                 </div>
                             </div>
-                            <!--swiper arrows-->
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
+
+                            <!--Testimonial 2-->
+                            <div class="testimonial-content swiper-slide">
+                                <p class="testimonial-description">
+                                    ...
+                                </p>
+                                <div>
+                                    <h3 class="testimonial-name">...</h3>
+                                    <span class="testimonial-subtitle">Client</span>
+                                </div>
+                            </div>
+
+                            <!--Testimonial 3-->
+                            <div class="testimonial-content swiper-slide">
+                                <p class="testimonial-description">
+                                    ...
+                                </p>
+                                <div>
+                                    <h3 class="testimonial-name">...</h3>
+                                    <span class="testimonial-subtitle">Client</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--swiper arrows-->
+                        <div class="swiper-button-next">
+                            <i class="ri-arrow-right-s-line"></i>
+                        </div>
+                        <div class="swiper-button-prev">
+                            <i class="ri-arrow-left-s-line"></i>
                         </div>
                     </div>
                 </div>
@@ -567,50 +593,72 @@
             </section>
             
             <!--CONTACT-->
-            <section class="contact-container">
-                <div class="contact-title">
-                  <i class="fa fa-envelope"></i>
-                  <h2>Contact Us</h2>
-                </div>
-              
-                <div class="contact-info">
-                  <div class="contact-data">
-                    <div class="contact-data-title">Address:</div>
-                    <div class="contact-data-info">123 Example Street, City</div>
-                  </div>
-                  <div class="contact-data">
-                    <div class="contact-data-title">Phone:</div>
-                    <div class="contact-data-info">123-456-7890</div>
-                  </div>
-                  <div class="contact-data">
-                    <div class="contact-data-title">Email:</div>
-                    <div class="contact-data-info">info@example.com</div>
-                  </div>
-                </div>
-              
-                <div class="contact-button">
-                  <i class="fa fa-paper-plane"></i>
-                  <span>Contact Us</span>
-                </div>
-              
-                <div class="contact-form">
-                  <div class="contact-form-div">
-                    <input class="contact-form-input" type="text" placeholder="Name">
-                    <div class="contact-form-tag">Name</div>
-                  </div>
-                  <div class="contact-form-div">
-                    <input class="contact-form-input" type="email" placeholder="Email">
-                    <div class="contact-form-tag">Email</div>
-                  </div>
-                  <div class="contact-form-div contact-form-area">
-                    <textarea class="contact-form-input" placeholder="Message"></textarea>
-                    <div class="contact-form-tag">Message</div>
-                  </div>
-                  <div class="contact-button">
-                    <i class="fa fa-paper-plane"></i>
-                    <span>Send Message</span>
-                  </div>
-                  <div class="contact-message">We'll get back to you shortly.</div>
+            <section class="contact section" id="contact">
+                <h2 class="section-title">Contact Me</h2>
+                <span class="section-subtitle">Get in touch</span>
+
+                <div class="contact-container container grid section-border">
+                    <div class="contact-content">
+                        <h3 class="contact-title">
+                            <i class="ri-chat-3-line"></i>Talk to me
+                        </h3>
+
+                        <div class="contact-info">
+                            <div class="contact-data">
+                                <span class="contact-data-title">Email</span>
+                                <span class="contact-data-info">ligalahhezron@gmail.com</span>
+                            </div>
+
+                            <div class="contact-data">
+                                <span class="contact-data-title">Whatsapp</span>
+                                <span class="contact-data-info">+254748855275</span>
+
+                                <a href="https://api.whatsapp.com/send?phone=254748855275&text=Hello, more information!" target="_blank" class="contact-button">
+                                    Write me <i class="ri-arrow-right-line"></i>
+                                </a>
+                            </div>
+
+                            <div class="contact-data">
+                                <span class="contact-data-title">Instagram</span>
+                                <span class="contact-data-info">https://www.instagram.com/ligalahhezronn</span>
+
+                                <a href="" class="contact-button">
+                                    Write me <i class="ri-arrow-right-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-content">
+                        <h3 class="contact-title">
+                            <i class="ri-send-plane-line"></i>Write me your project
+                        </h3>
+
+                        <form action="" class="contact-form" id="contact-form">
+                            <div class="contact-form-div">
+                                <label for="" class="contact-form-tag">Name</label>
+                                <input type="text" name="user-name" required placeholder="Write your name" class="contact-form-input" id="contact-name">
+                            </div>
+
+                            <div class="contact-form-div">
+                                <label for="" class="contact-form-tag">Mail</label>
+                                <input type="email" name="user-name" required placeholder="Write your email" class="contact-form-input" id="contact-email">
+                            </div>
+
+                            <div class="contact-form-div contact-form-area">
+                                <label for="" class="contact-form-tag">Project</label>
+                                <textarea name="user-project" placeholder="Write your prject" id="comtact-project" class="contact-form-input"></textarea>
+                            </div>
+
+                            <p class="contact-message" id="contact-message">
+                                
+                            </p>
+
+                            <button type="submit" class ="contact-button">
+                                Submit <i class="ri-arrow-right-up-line"></i>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </section>
               
@@ -657,7 +705,7 @@
         <!--Swiper js-->
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <!--Email js-->
-        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
         <!--fontawesome icons-->
         <script src="https://kit.fontawesome.com/922d7c41b9.js" crossorigin="anonymous"></script>
         <!--Main js-->
