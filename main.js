@@ -75,7 +75,7 @@ const sendEmail = (e) =>{
     if(contactName.value === '' || contactEmail.value === '' || contactProject.value === ''){
         //Add and remove color
         contactMessage.classList.remove('color-blue')
-        contactMessage.add('color-red')
+        contactMessage.classList.add('color-red')
 
         //show message
         contactMessage.textContent = 'Write all the input fields 📩'
