@@ -81,7 +81,17 @@ const sendEmail = (e) =>{
         contactMessage.textContent = 'Write all the input fields 📩'
     }else{
         // serviceID - templateID - #form - publicKey
-        emailjs.sendForm('','','','')
+        emailjs.sendForm('service_5j6s1x4','template_r6cxzzq','#contact-form','h98BHDmxxMHUODCgL')
+            .then(() =>{
+                //show message and add color
+                contactMessage.classList.add('color-blue')
+                contactMessage.textContent = 'Message sent✅'
+
+                //remove message after 5 seconds
+                setTimeout(() =>{
+                    contactMessage.textContent = ''
+                }, 5000)
+            })
     }
 }
 contactForm.addEventListener('submit', sendEmail)
